@@ -824,12 +824,50 @@ const MenuPreview = ({
 
 
 // ─── Cardápio & Sucessos ──────────────────────────────────────────────────────
-const CardapioSucessosSection = ({ id = 'cardapio-sucessos' }: { id?: string } = {}) => {
+interface CardapioSucessosProps {
+  id?: string;
+  eyebrow?: string;
+  title?: React.ReactNode;
+  description?: string;
+  features?: Array<{ title: string; subtitle: string }>;
+  imageLeft?: { src: string; alt: string; label: string };
+  imageRight?: { src: string; alt: string; label: string };
+  className?: string;
+}
+
+const CardapioSucessosSection = ({
+  id = 'cardapio-sucessos',
+  eyebrow = 'NOTRE CARTE & SPÉCIALITÉS',
+  title = (
+    <>
+      Cardápio &amp;<br />
+      <em className="italic font-light">Sucessos</em>
+    </>
+  ),
+  description = 'Pratos autorais e clássicos da alta Gastronomia Francesa desenvolvidos pelos chefs proprietários formados pela escola Lê Cordon Bleu.',
+  features = [
+    { title: 'Autoral', subtitle: 'CORDON BLEU' },
+    { title: 'Massas', subtitle: 'FEITAS NA CASA' },
+    { title: 'Vinhos Franceses', subtitle: 'SELEÇÃO ELABORADA PELA NOSSA SOMMELIER' },
+    { title: '100%', subtitle: 'EXPERIÊNCIA BISTRÔ' },
+  ],
+  imageLeft = {
+    src: '/cardapio_macarrao.jpg',
+    alt: 'Boeuf Bourguignon & Massa Fresca',
+    label: 'Boeuf Bourguignon & Massa Fresca',
+  },
+  imageRight = {
+    src: '/cardapio_risoto.jpg',
+    alt: 'Confit de Pato & Risoto de Brie',
+    label: 'Confit de Pato & Risoto de Brie',
+  },
+  className = 'section-warm-bg py-24 md:py-36 overflow-hidden relative border-t border-gold/15',
+}: CardapioSucessosProps = {}) => {
   const { unit: urlUnit } = useParams<{ unit: string }>();
   const activeUnit = urlUnit || 'campos';
 
   return (
-    <section id={id} className="section-warm-bg py-28 md:py-40 overflow-hidden relative">
+    <section id={id} className={className}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -842,46 +880,48 @@ const CardapioSucessosSection = ({ id = 'cardapio-sucessos' }: { id?: string } =
             className="space-y-8 order-2 lg:order-1"
           >
             <div>
-              <p className="font-sans text-[10px] tracking-[0.4em] uppercase text-rose-light mb-4" style={{ color: '#745AA7' }}>
-                Notre Carte &amp; Spécialités
+              <p className="font-sans text-[10px] tracking-[0.4em] uppercase mb-4" style={{ color: '#745AA7' }}>
+                {eyebrow}
               </p>
               <h2 className="font-serif text-5xl md:text-6xl text-cafe leading-tight">
-                Nosso Cardápio
+                {title}
               </h2>
             </div>
 
             <div className="w-10 h-px bg-gold" />
 
-            <div className="space-y-4 pt-1">
-              {[
-                'Chefs da Le Cordon Bleu',
-                'Pratos elaborados pelos nossos chefs',
-                'Gastronomia Francesa com um toque autoral',
-                activeUnit === 'campos' || activeUnit === 'campos_jordao'
-                  ? 'Melhor experiência gastronômica de Campos do Jordão'
-                  : 'Melhor experiência gastronômica de São Paulo',
-              ].map((phrase, i) => (
-                <div key={i} className="flex items-center gap-3.5 border-l-2 border-gold/40 pl-4 py-1.5">
-                  <Sparkles size={16} className="text-gold shrink-0" />
-                  <span className="font-serif text-lg sm:text-xl text-cafe leading-snug font-medium">
-                    {phrase}
-                  </span>
+            <p className="font-body text-cafe/80 text-base leading-relaxed">
+              {description}
+            </p>
+
+            <div className="grid grid-cols-2 gap-x-8 gap-y-6 pt-2">
+              {features.map((feat, i) => (
+                <div key={i}>
+                  <h4 className="font-serif text-2xl sm:text-3xl text-wine font-light leading-snug">
+                    {feat.title}
+                  </h4>
+                  <p className="font-sans text-[9px] tracking-[0.25em] uppercase text-cafe/70 mt-1 font-semibold">
+                    {feat.subtitle}
+                  </p>
                 </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 pt-3">
+            <div className="flex flex-wrap items-center gap-6 pt-4">
               <a
                 href={getCanvaMenuUrl(activeUnit)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-rose-light inline-flex items-center gap-2"
               >
-                <span>Acessar Cardápio Oficial</span>
+                <span>ACESSAR CARDÁPIO OFICIAL</span>
                 <ExternalLink size={14} />
               </a>
-              <Link to={`/${activeUnit}/reservar`} className="inline-flex items-center gap-1.5 font-sans text-xs tracking-wider uppercase text-wine hover:text-cafe transition-colors font-semibold py-3 px-2">
-                <span>Reservar Agora</span>
+              <Link
+                to={`/${activeUnit}/reservar`}
+                className="inline-flex items-center gap-1.5 font-sans text-xs tracking-wider uppercase text-wine hover:text-cafe transition-colors font-semibold py-2"
+              >
+                <span>QUERO MINHA RESERVA</span>
                 <ChevronRight size={14} />
               </Link>
             </div>
@@ -895,28 +935,32 @@ const CardapioSucessosSection = ({ id = 'cardapio-sucessos' }: { id?: string } =
             viewport={{ once: true }}
             className="grid grid-cols-2 gap-4 order-1 lg:order-2"
           >
-            <div className="parallax-img aspect-[3/4] overflow-hidden rounded-2xl card-shadow col-span-1 mt-8 group relative">
+            <div className="aspect-[3/4] overflow-hidden rounded-2xl card-shadow group relative">
               <img
-                src="/cardapio_ravioli_camarao.jpg?v=20261020"
-                alt="Ravioli Artesanal com Camarões e Vinho Branco"
+                src={imageLeft.src}
+                alt={imageLeft.alt}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 style={{ objectPosition: 'center center' }}
                 loading="lazy"
               />
               <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                <span className="text-[11px] font-serif text-white tracking-wide block">Ravioli Artesanal &amp; Camarões</span>
+                <span className="text-[11px] font-serif text-white tracking-wide block">
+                  {imageLeft.label}
+                </span>
               </div>
             </div>
-            <div className="parallax-img aspect-[3/4] overflow-hidden rounded-2xl card-shadow col-span-1 group relative">
+            <div className="aspect-[3/4] overflow-hidden rounded-2xl card-shadow group relative">
               <img
-                src="/cardapio_risoto.jpg"
-                alt="Confit de Pato com Risoto de Brie e Damasco"
+                src={imageRight.src}
+                alt={imageRight.alt}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 style={{ objectPosition: 'center center' }}
                 loading="lazy"
               />
               <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                <span className="text-[11px] font-serif text-white tracking-wide block">Confit de Pato &amp; Risoto de Brie</span>
+                <span className="text-[11px] font-serif text-white tracking-wide block">
+                  {imageRight.label}
+                </span>
               </div>
             </div>
           </motion.div>
@@ -1771,6 +1815,13 @@ export default function App() {
         {settings.showHistoire && <Histoire />}
         {dbUnit === 'campos_jordao' && <AmbientesSection />}
         {dbUnit === 'campos_jordao' && <Menu6TemposSection />}
+        {dbUnit === 'campos_jordao' && (
+          <>
+            <CardapioSucessosSection id="cardapio-sucessos-1" />
+            <CardapioSucessosSection id="cardapio-sucessos-2" />
+            <CardapioSucessosSection id="cardapio-sucessos-3" />
+          </>
+        )}
         {settings.showAvaliacoes !== false && <GoogleReviews unit={dbUnit} />}
         {settings.showInstagram !== false && <InstagramLiveFeed id="instagram" />}
         {settings.showMenu ? (
