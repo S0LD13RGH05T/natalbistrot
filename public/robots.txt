@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Restaurante francês em São Paulo, gastronomia premiada e clima romântico para Dia dos Namorados. Reserve sua mesa no Bistrot de Ville." />
+  <meta name="keywords"
+    content="Bistrot de Ville, restaurante francês em São Paulo, restaurante romântico São Paulo, Dia dos Namorados, Vila Mariana, gastronomia premiada" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bistrot de Ville | Dia dos Namorados em São Paulo" />
+  <meta property="og:description"
+    content="Um cenário encantador para celebrar o amor. Reserve seu momento inesquecível no Bistrot de Ville." />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <!-- Favicon — otimizado e leve para garantir exibição no Vercel e todos os browsers -->
+  <link rel="icon" href="/favicon.png?v=3" type="image/png" />
+  <link rel="shortcut icon" href="/favicon.png?v=3" type="image/png" />
+  <link rel="apple-touch-icon" href="/favicon.png?v=3" />
+  
+  <title>Bistrot de Ville | Restaurante Francês</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Bistrot de Ville",
+      "description": "Restaurante francês em São Paulo com gastronomia premiada e experiência romântica para casais.",
+      "servesCuisine": "Francesa",
+      "priceRange": "R$ 60-180",
+      "telephone": "+55 11 98348-3472",
+      "url": "https://bistrotdeville.com.br",
+      "acceptsReservations": true,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Rio Grande, 218",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "04018-000",
+        "addressCountry": "BR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1239"
+      },
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": "https://wa.me/5511983483472?text=Gostaria%20de%20reservar%20uma%20mesa%20para%20a%20unidade%20de%20S%C3%A3o%20Paulo."
+      }
+    }
+  </script>
+
+  <!-- Elfsight Instagram Feed Platform -->
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+  <script type="module" crossorigin src="/assets/index-Co3GkBvp.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BE7tZ22E.css">
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
