@@ -457,6 +457,7 @@ const Histoire = () => {
 // ─── Ambientes (Campos do Jordão) ─────────────────────────────────────────────
 const AmbientesSection = ({ id = 'ambientes' }: { id?: string } = {}) => {
   const { unit: urlUnit } = useParams<{ unit: string }>();
+  const activeUnit = urlUnit || 'campos';
 
   return (
     <section id={id} className="section-warm-bg py-28 md:py-40 border-t border-gold/15">
@@ -650,6 +651,7 @@ const MenuPreview = ({
 // ─── Cardápio & Sucessos ──────────────────────────────────────────────────────
 const CardapioSucessosSection = ({ id = 'cardapio-sucessos' }: { id?: string } = {}) => {
   const { unit: urlUnit } = useParams<{ unit: string }>();
+  const activeUnit = urlUnit || 'campos';
 
   return (
     <section id={id} className="section-warm-bg py-28 md:py-40 overflow-hidden relative">
@@ -752,6 +754,7 @@ const CardapioSucessosSection = ({ id = 'cardapio-sucessos' }: { id?: string } =
 // ─── Vinhos & Sobremesas ──────────────────────────────────────────────────────
 const VinhosSection = ({ id = 'vinhos' }: { id?: string } = {}) => {
   const { unit: urlUnit } = useParams<{ unit: string }>();
+  const activeUnit = urlUnit || 'campos';
 
   return (
     <section id={id} className="section-warm-bg py-28 md:py-40 overflow-hidden">
