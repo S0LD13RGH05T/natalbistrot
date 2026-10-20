@@ -501,8 +501,8 @@ const AmbientesSection = ({ id = 'ambientes' }: { id?: string } = {}) => {
             {/* Main image */}
             <div className="parallax-img aspect-[3/4] overflow-hidden rounded-2xl card-shadow bg-cafe/5 border border-gold/20">
               <img
-                src="/ambientes-campos.jpg"
-                alt="Ambiente interno e externo do Bistrot de Ville em Campos do Jordão"
+                src="/natal_dois_ambientes.jpg?v=20261020a"
+                alt="Um Natal, Dois Ambientes - Bistrot de Ville Campos do Jordão"
                 className="w-full h-full object-cover object-center"
                 loading="lazy"
               />
@@ -513,12 +513,12 @@ const AmbientesSection = ({ id = 'ambientes' }: { id?: string } = {}) => {
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
               viewport={{ once: true }}
-              className="absolute -bottom-8 -right-4 md:-right-10 w-44 md:w-60 bg-wine rounded-2xl p-5 card-shadow"
+              className="absolute -bottom-6 -right-4 md:-right-8 w-44 md:w-56 bg-white/75 backdrop-blur-md rounded-2xl p-4 md:p-5 shadow-xl border border-white/60"
             >
-              <div className="font-serif text-4xl md:text-5xl text-wine leading-none mb-1">
+              <div className="font-serif text-4xl md:text-5xl text-wine leading-none mb-1 font-semibold">
                 2
               </div>
-              <div className="font-sans text-[9px] tracking-[0.3em] uppercase text-cafe/60 whitespace-pre-line">
+              <div className="font-sans text-[9px] tracking-[0.25em] uppercase text-cafe/75 font-medium whitespace-pre-line leading-relaxed">
                 {'Ambientes Encantadores\nInterno & Externo'}
               </div>
             </motion.div>
@@ -537,8 +537,8 @@ const AmbientesSection = ({ id = 'ambientes' }: { id?: string } = {}) => {
                 Espaços &amp; Atmosfera
               </p>
               <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-cafe leading-tight">
-                Ambiente Interno<br />
-                <em className="italic font-light">&amp; Externo</em>
+                Um Natal Mágico<br />
+                <em className="italic font-light">nas Montanhas de Campos do Jordão</em>
               </h2>
             </div>
 
@@ -546,20 +546,41 @@ const AmbientesSection = ({ id = 'ambientes' }: { id?: string } = {}) => {
 
             <div className="space-y-4">
               <p className="font-body text-cafe/80 text-base leading-relaxed">
-                Em meio às montanhas de Campos do Jordão, encontra-se o Bistrot de Ville (unidade Campos). O espaço conta com dois ambientes encantadores e acolhedores:
+                O Bistrot de Ville (unidade Campos) veste-se de pura magia para celebrar a época mais encantadora do ano. Em meio à grandiosidade das montanhas, preparamos um evento natalino inesquecível, onde cada detalhe foi pensado para aquecer o coração e criar memórias eternas ao lado de quem você ama.
               </p>
-              <div className="space-y-3 pt-1">
-                <p className="font-body text-cafe/75 text-sm sm:text-base leading-relaxed">
-                  <strong className="text-cafe font-semibold font-serif text-base sm:text-lg block mb-1">Ambiente Interno:</strong>
-                  Conta com lareiras e uma refinada decoração inspirada na Belle Époque francesa, repleta de objetos antigos garimpados em antiquários da França.
-                </p>
-                <p className="font-body text-cafe/75 text-sm sm:text-base leading-relaxed">
-                  <strong className="text-cafe font-semibold font-serif text-base sm:text-lg block mb-1">Ambiente Externo:</strong>
-                  Um verdadeiro refúgio que remete aos jardins de Monet, cercado por flores, folhagens e araucárias centenárias. Mesas dispostas ao redor de lareiras e aquecedores ao ar livre dão um charme único ao espaço, que ainda conta com uma tela de cinema exibindo clipes musicais. Para completar o clima bucólico, coelhos, esquilos e aves exóticas circulam livremente pelo jardim.
-                </p>
+              <p className="font-body text-cafe/80 text-base leading-relaxed font-medium">
+                Venha vivenciar a nossa celebração em dois ambientes deslumbrantes e acolhedores:
+              </p>
+              <div className="space-y-4 pt-1">
+                <div className="p-4 rounded-xl bg-cafe/5 border border-gold/15 space-y-1.5">
+                  <strong className="text-cafe font-semibold font-serif text-base sm:text-lg block">
+                    Ambiente Interno – O Refúgio Clássico de Inverno
+                  </strong>
+                  <p className="font-body text-cafe/75 text-sm sm:text-base leading-relaxed">
+                    Entre no clima de um conto de fadas natalino. O salão é adornado por uma refinada decoração inspirada na Belle Époque francesa, repleta de tesouros garimpados em antiquários da França. O crepitar e o calor acolhedor da lareira completam a atmosfera festiva, oferecendo o cenário perfeito para um jantar de Natal intimista e sofisticado.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-cafe/5 border border-gold/15 space-y-1.5">
+                  <strong className="text-cafe font-semibold font-serif text-base sm:text-lg block">
+                    Ambiente Externo – Um Conto de Natal sob as Estrelas
+                  </strong>
+                  <p className="font-body text-cafe/75 text-sm sm:text-base leading-relaxed">
+                    Inspirado na beleza dos jardins de Monet e cercado por araucárias centenárias e uma iluminação natalina deslumbrante, nosso jardim se transforma em um verdadeiro cenário mágico ao ar livre. Desfrute de mesas aconchegantes dispostas ao redor de lareiras e aquecedores, enquanto uma tela de cinema ao ar livre exibe clipes musicais temáticos para embalar a noite. Para coroar o clima bucólico e encantador, coelhos, esquilos e aves exóticas circulam livremente pela natureza.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-cafe/5 border border-gold/15 space-y-1.5">
+                  <strong className="text-cafe font-semibold font-serif text-base sm:text-lg block">
+                    A Noite de Natal Perfeita
+                  </strong>
+                  <p className="font-body text-cafe/75 text-sm sm:text-base leading-relaxed">
+                    Para tornar a sua noite ainda mais mágica, preparamos uma programação especial com música ao vivo, espalhando melodias encantadoras por todas as áreas do bistrot — seja junto à lareira interna ou sob o céu estrelado do jardim.
+                  </p>
+                </div>
               </div>
-              <p className="font-body text-cafe/80 text-sm sm:text-base leading-relaxed pt-2 border-t border-gold/20">
-                Aos finais de semana, a experiência fica ainda mais especial com música ao vivo, com apresentações que encantam tanto a área interna quanto a externa.
+              <p className="font-body text-cafe/85 text-sm sm:text-base leading-relaxed pt-2 border-t border-gold/20 font-serif italic text-base">
+                Escolha o seu ambiente favorito, reserve a sua mesa e venha viver a magia do Natal com sofisticação, sabor e muito afeto no Bistrot de Ville!
               </p>
             </div>
 
