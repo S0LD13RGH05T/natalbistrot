@@ -607,6 +607,134 @@ const AmbientesSection = ({ id = 'ambientes' }: { id?: string } = {}) => {
   );
 };
 
+// ─── Menu Natalino em 6 Tempos (Campos do Jordão) ─────────────────────────────
+const Menu6TemposSection = ({ id = 'menu-6-tempos' }: { id?: string } = {}) => {
+  const { unit: urlUnit } = useParams<{ unit: string }>();
+  const activeUnit = urlUnit || 'campos';
+
+  return (
+    <section id={id} className="py-24 md:py-36 border-t border-gold/15 relative overflow-hidden bg-french-green/20">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Image side */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            {/* Main image */}
+            <div className="overflow-hidden rounded-2xl card-shadow bg-cafe/5 border border-gold/20">
+              <img
+                src="/menu_natal_6_tempos.jpg?v=20261020a"
+                alt="Menu natalino em 6 Tempos - Bistrot de Ville Campos do Jordão"
+                className="w-full h-auto object-cover object-center"
+                loading="lazy"
+              />
+            </div>
+            {/* Floating accent card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, x: 20 }}
+              whileInView={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="absolute -bottom-6 -right-4 md:-right-8 w-44 md:w-56 bg-white/75 backdrop-blur-md rounded-2xl p-4 md:p-5 shadow-xl border border-white/60"
+            >
+              <div className="font-serif text-4xl md:text-5xl text-wine leading-none mb-1 font-semibold">
+                6
+              </div>
+              <div className="font-sans text-[9px] tracking-[0.25em] uppercase text-cafe/75 font-medium whitespace-pre-line leading-relaxed">
+                {'Tempos Exclusivos\nMenu Natalino'}
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Text side */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+            viewport={{ once: true }}
+            className="lg:pl-8 space-y-6"
+          >
+            <div>
+              <p className="font-sans text-[10px] tracking-[0.4em] uppercase mb-4" style={{ color: '#745AA7' }}>
+                Natal no Bistrot de Ville
+              </p>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-cafe leading-tight">
+                Campos do Jordão<br />
+                <em className="italic font-light">Uma experiência gastronômica em 6 tempos</em>
+              </h2>
+            </div>
+
+            <div className="w-10 h-px bg-gold" />
+
+            <div className="space-y-4">
+              <p className="font-body text-cafe text-base sm:text-lg leading-relaxed font-medium">
+                Uma noite mágica, uma gastronomia inesquecível e o encanto do Natal nas montanhas de Campos do Jordão.
+              </p>
+              <p className="font-body text-cafe/80 text-sm sm:text-base leading-relaxed">
+                Para celebrar uma das noites mais especiais do ano, o Bistrot de Ville Campos do Jordão preparou uma experiência gastronômica exclusiva, que reúne sofisticação, tradição e os sabores que conquistaram nossos clientes ao longo de todo o ano.
+              </p>
+              <p className="font-body text-cafe/80 text-sm sm:text-base leading-relaxed">
+                Nosso grande destaque é o Menu Especial de Natal em 6 Tempos, cuidadosamente desenvolvido pelos chefs proprietários do Bistrot de Ville, formados pela renomada escola francesa de gastronomia Le Cordon Bleu.
+              </p>
+              <p className="font-body text-cafe/80 text-sm sm:text-base leading-relaxed">
+                A proposta nasceu de uma inspiração muito especial: reunir em uma única noite os pratos que fizeram maior sucesso em nossas unidades, aqueles que receberam os maiores elogios dos nossos clientes e se tornaram verdadeiros protagonistas da nossa gastronomia.
+              </p>
+              <p className="font-body text-cafe/80 text-sm sm:text-base leading-relaxed">
+                Cada receita foi cuidadosamente revisitada, valorizando os sabores originais que conquistaram tantos paladares, mas recebendo toques especiais, adaptações natalinas e apresentações sofisticadas, pensadas exclusivamente para a celebração da noite de Natal.
+              </p>
+
+              <div className="p-4 sm:p-5 rounded-xl bg-cafe/5 border border-gold/20 space-y-2">
+                <p className="font-body text-cafe/85 text-sm sm:text-base leading-relaxed">
+                  São 6 tempos de uma verdadeira viagem gastronômica, em que a elegância da cozinha francesa encontra os sabores da Mantiqueira e a tradição das grandes celebrações natalinas.
+                </p>
+                <p className="font-body text-cafe/85 text-sm sm:text-base leading-relaxed">
+                  Mais do que oferecer uma ceia, queremos proporcionar uma experiência memorável, em que cada etapa do menu seja uma descoberta, cada prato conte uma história e cada sabor desperte boas lembranças.
+                </p>
+              </div>
+
+              <p className="font-body text-cafe/80 text-sm sm:text-base leading-relaxed">
+                E para tornar essa noite ainda mais encantadora, o Bistrot de Ville recebe seus convidados em um cenário único nas montanhas de Campos do Jordão, com ambientes acolhedores, decoração especial, jardins cercados por araucárias centenárias e o charme das lareiras que tornam nosso restaurante tão especial.
+              </p>
+              <p className="font-body text-cafe/80 text-sm sm:text-base leading-relaxed">
+                Neste Natal, os pratos mais amados do Bistrot de Ville estarão reunidos em uma única experiência, especialmente criada para celebrar a magia dessa data.
+              </p>
+
+              <div className="pt-3 pb-1 border-t border-gold/20">
+                <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gold/15 border border-gold/30 text-cafe font-serif text-base sm:text-lg italic font-medium">
+                  <Sparkles size={16} className="text-gold shrink-0" />
+                  <span>✨ Natal Bistrot de Ville — Menu Exclusivo em 6 Tempos.</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-6 pt-2">
+              {[
+                { icon: ChefHat, label: 'Chefs Formados Le Cordon Bleu' },
+                { icon: Sparkles, label: 'Menu Exclusivo em 6 Tempos' },
+                { icon: Award, label: 'Alta Gastronomia na Mantiqueira' },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-2 text-cafe/60">
+                  <Icon size={14} className="text-gold shrink-0" />
+                  <span className="font-sans text-xs tracking-wide">{label}</span>
+                </div>
+              ))}
+            </div>
+
+            <Link to={`/${activeUnit}/reservar`} className="btn-outline-wine inline-flex">
+              Reservar Menu de Natal <ChevronRight size={14} />
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // ─── Menu Préview ──────────────────────────────────────────────────────────────
 const MenuPreview = ({
   onOpenFullMenu, menuItems, onAddToCart
@@ -1642,6 +1770,7 @@ export default function App() {
         <StatsStrip />
         {settings.showHistoire && <Histoire />}
         {dbUnit === 'campos_jordao' && <AmbientesSection />}
+        {dbUnit === 'campos_jordao' && <Menu6TemposSection />}
         {settings.showAvaliacoes !== false && <GoogleReviews unit={dbUnit} />}
         {settings.showInstagram !== false && <InstagramLiveFeed id="instagram" />}
         {settings.showMenu ? (
