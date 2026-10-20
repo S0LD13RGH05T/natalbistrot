@@ -381,8 +381,8 @@ const Histoire = () => {
             {/* Main image */}
             <div className="parallax-img aspect-[4/5] overflow-hidden rounded-2xl card-shadow">
               <img
-                src={dbUnit === 'campos_jordao' ? '/story_campos_firepit.jpeg?v=20261018a' : '/story-couple-bistrot.jpeg'}
-                alt={dbUnit === 'campos_jordao' ? 'Jardim com lareira ao ar livre e araucárias no Bistrot de Ville em Campos do Jordão' : 'Bistrot de Ville'}
+                src={dbUnit === 'campos_jordao' ? '/story_campos_natal.jpg?v=20261020a' : '/story-couple-bistrot.jpeg'}
+                alt={dbUnit === 'campos_jordao' ? 'A Magia do Natal no Bistrot de Ville em Campos do Jordão' : 'Bistrot de Ville'}
                 className="w-full h-full object-cover"
                 style={{ objectPosition: 'center center' }}
                 loading="lazy"
