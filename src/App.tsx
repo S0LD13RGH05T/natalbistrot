@@ -164,7 +164,7 @@ const Navbar = ({ showMenu }: { showMenu?: boolean }) => {
 };
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
-const Hero = ({ onOpenMenu, showMenu }: { onOpenMenu: () => void; showMenu?: boolean }) => {
+const Hero = ({ onOpenMenu, showMenu, currentEvent = 'natal' }: { onOpenMenu: () => void; showMenu?: boolean; currentEvent?: 'natal' | 'reveillon' }) => {
   const { unit: urlUnit } = useParams<{ unit: string }>();
   const activeUnit = urlUnit || 'campos';
   const dbUnit = activeUnit === 'campos' || activeUnit === 'campos_jordao' ? 'campos_jordao' : 'sao_paulo';
@@ -220,6 +220,32 @@ const Hero = ({ onOpenMenu, showMenu }: { onOpenMenu: () => void; showMenu?: boo
               className="text-[#FBBF24] fill-[#FBBF24] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
             />
           ))}
+        </div>
+
+        {/* Botões Natal / Réveillon */}
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mt-5 sm:mt-6 pointer-events-auto z-30">
+          <Link
+            to="/"
+            className={`inline-flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-sans text-[11px] sm:text-xs tracking-[0.2em] uppercase font-semibold transition-all duration-300 shadow-2xl cursor-pointer ${
+              currentEvent === 'natal'
+                ? 'bg-[#745AA7] text-white border-2 border-white/80 shadow-[0_8px_30px_rgba(116,90,167,0.6)] scale-105'
+                : 'bg-black/55 text-champagne/80 border border-white/25 hover:bg-black/75 hover:text-white hover:border-white/50 backdrop-blur-md'
+            }`}
+          >
+            <Sparkles size={14} className={currentEvent === 'natal' ? 'text-[#FBBF24]' : 'text-gold/80'} />
+            <span>Natal</span>
+          </Link>
+          <Link
+            to="/reveillon"
+            className={`inline-flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-sans text-[11px] sm:text-xs tracking-[0.2em] uppercase font-semibold transition-all duration-300 shadow-2xl cursor-pointer ${
+              currentEvent === 'reveillon'
+                ? 'bg-[#745AA7] text-white border-2 border-white/80 shadow-[0_8px_30px_rgba(116,90,167,0.6)] scale-105'
+                : 'bg-black/55 text-champagne/80 border border-white/25 hover:bg-black/75 hover:text-white hover:border-white/50 backdrop-blur-md'
+            }`}
+          >
+            <Sparkles size={14} className={currentEvent === 'reveillon' ? 'text-[#FBBF24]' : 'text-gold/80'} />
+            <span>Réveillon</span>
+          </Link>
         </div>
       </motion.div>
 
@@ -1591,7 +1617,7 @@ export default function App() {
       <Navbar showMenu={settings.showMenu} />
 
       <main>
-        <Hero onOpenMenu={() => setIsMenuOpen(true)} showMenu={settings.showMenu} />
+        <Hero onOpenMenu={() => setIsMenuOpen(true)} showMenu={settings.showMenu} currentEvent="natal" />
         <StatsStrip />
         {settings.showHistoire && <Histoire />}
         {dbUnit === 'campos_jordao' && <AmbientesSection />}
