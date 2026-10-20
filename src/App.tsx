@@ -208,7 +208,7 @@ const Hero = ({ onOpenMenu, showMenu, currentEvent = 'natal' }: { onOpenMenu: ()
         </div>
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-champagne max-w-4xl tracking-tight leading-[1.15] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)] font-normal">
           {dbUnit === 'campos_jordao'
-            ? 'Restaurante Mais Bem Avaliado de Campos do Jordão'
+            ? 'Natal de charme em meio às montanhas de Campos do Jordão'
             : 'Restaurante Mais Bem Avaliado de São Paulo'}
         </h1>
         {/* 5 Estrelas embaixo */}
@@ -420,8 +420,8 @@ const Histoire = () => {
               <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-cafe leading-tight">
                 {dbUnit === 'campos_jordao' ? (
                   <>
-                    Un Coin de<br />
-                    <em className="italic font-light">Paris em Campos do Jordão</em>
+                    A magia do<br />
+                    <em className="italic font-light">Natal em Campos do Jordão</em>
                   </>
                 ) : (
                   <>
@@ -437,10 +437,10 @@ const Histoire = () => {
             {dbUnit === 'campos_jordao' ? (
               <>
                 <p className="font-body text-cafe/70 text-base leading-loose">
-                  O Bistrot De Ville chegou às montanhas. Em um charmoso Chateau reformado com a identidade clássica da casa, trazemos a essência dos bistrôs parisienses para o clima aconchegante de Campos do Jordão. Criado por Carol Barbosa e Roma, o espaço une a técnica da escola Le Cordon Bleu ao acolhimento da serra.
+                  O Natal chegou ao Bistrot De Ville. Em um charmoso château reformado com a identidade clássica da casa, trazemos a magia e a energia festiva do Natal para o clima aconchegante de Campos do Jordão. Criado por Carol Barbosa e Roma, o espaço une a técnica impecável da escola Le Cordon Bleu em uma ceia de Natal especial.
                 </p>
                 <p className="font-body text-cafe/60 text-sm leading-loose">
-                  Mais do que um restaurante, o Bistrot De Ville em Campos do Jordão é uma experiência sensorial única: lareira, vinhos selecionados e a clássica gastronomia francesa sob o céu estrelado da Mantiqueira.
+                  Mais do que um restaurante, o Bistrot De Ville em Campos do Jordão é uma experiência sensorial única nesta época do ano: lareira acesa, vinhos selecionados e uma ceia de Natal exclusiva, magistralmente preparada por nossos chefs formados pelo Cordon Bleu, celebrando o melhor da gastronomia sob o céu estrelado da Mantiqueira.
                 </p>
               </>
             ) : (
@@ -1547,7 +1547,7 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = dbUnit === 'campos_jordao' ? 'Bistrot de Ville | Campos do Jordão' : 'Bistrot de Ville | Vila Mariana';
+    document.title = dbUnit === 'campos_jordao' ? 'Bistrot de Ville | Natal em Campos do Jordão' : 'Bistrot de Ville | Vila Mariana';
     getMenuItems(dbUnit)
       .then(saved => {
         const localFiltered = menuData.filter(item => {
